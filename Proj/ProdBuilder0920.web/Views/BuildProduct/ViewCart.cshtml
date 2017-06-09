@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.Part>
+@{
+    ViewBag.Title = "ViewChart";
+    var sum = ViewBag.price;
+}
+
+<br />
+<br />
+<br />
+<div class="row alert-success text-center">
+    <h2><strong>Product Cart <span class="glyphicon glyphicon-shopping-cart"></span></strong></h2>
+</div>
+<hr />
+<br />
+<br />
+
+<div class="row col-md-12">
+    <div class="row text-center"><i>  Package: @ViewBag.id (@ViewBag.price kr)         </i> </div>
+    <br/>
+   
+    <table class="table table-striped table-bordered table-condensed table-hover text-center">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="alert-success"> @item.PartType.PartTypeName</td>
+                <td> Manu: @item.PartManufacturer </td>
+                <td>Description: @item.PartDescription</td>
+                <td> Price: @item.PartPrice kr </td>
+                <td> Delivery: @item.PartDeliverytime.ToString("d") </td>
+            </tr>
+            sum = sum + item.PartPrice;
+        }
+
+    </table>
+
+</div>
+
+<div class="row col-md-12">
+    <div class="">@Html.ActionLink("Place Order", "PlaceOrder", "BuildProduct", null, new {@class = "btn btn-success delete"}) </div>
+</div>
+
+<div class="row col-md-12">
+    <div class=""> <b> Total:</b> @sum kr
+    </div>
+</div>
+
+<div class="row col-md-12">
+    <div class="col-md-2">@Html.ActionLink("Back", "Index", "BuildProduct")</div>
+</div>
+

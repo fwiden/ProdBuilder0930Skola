@@ -1,0 +1,60 @@
+﻿@using System.Web.UI.WebControls
+@model ProdBuilder0920.Domain.ViewModels.LoginViewModel
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<br /><br /><br />
+
+
+<div class="row col-md-4 col-md-offset-4 ">
+    <h2>Login</h2>
+    @using (Html.BeginForm("Login", "Account", new {ReturnUrl = ViewBag.ReturnUrl}, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <h4 class=""></h4>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <div class="">@Html.TextBoxFor(m => m.UserName, new { @class = "form-control", placeholder = "Email" })</div>
+        </div>
+
+        <div class="form-group">
+
+            <div class=""> @Html.PasswordFor(m => m.Password, new { @class = "form-control", placeholder = "Password" })</div>
+        </div>
+
+
+    <input type="submit" value="Log in" class="btn btn-primary" />
+
+
+    @*@Html.AntiForgeryToken()
+        <h4 class="">Use a local account to log in.</h4>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+            @Html.Label("Email")
+            @Html.TextBox("Username")
+        </div>
+        <div class="form-group">
+            <label for="pwd">Password:</label>
+            @Html.Password("Password")
+        </div>
+
+        <input type="submit" value="Log in" class="btn btn-default" />*@
+
+    }
+
+
+
+
+
+
+
+
+</div>
+
+
+

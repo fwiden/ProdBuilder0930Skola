@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.Package>
+
+<h4 class="alert-warning">Choose Package:</h4>
+
+        @foreach (var item in Model)
+        {
+            <p>
+                @Ajax.ActionLink(item.PackageName, "AddPartMiddleRight", "Admin", new { id = item.PackageID }, new AjaxOptions
+           {
+               UpdateTargetId = "middle_right",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET",
+               //LoadingElementId = "imgloader",
+
+
+           }, new { @class = "btn btn-danger delete" })
+            </p>
+        }
+    
+
+
+
+

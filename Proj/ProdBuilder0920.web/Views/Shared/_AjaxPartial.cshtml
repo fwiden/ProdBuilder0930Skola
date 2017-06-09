@@ -1,0 +1,28 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.PartType>
+
+<div class="row text-center">
+    <br/>
+    <br/>
+    <br/>
+    <i>Choose parttypes for :</i>
+    <br/>
+
+    @foreach (var item in Model)
+    {
+
+        @Ajax.ActionLink(item.PartTypeName, "GetPackages", "BuildProduct", new {id = item.PartTypeID}, new AjaxOptions
+   {
+
+       UpdateTargetId = "packages",
+       InsertionMode = InsertionMode.Replace,
+       HttpMethod = "GET",
+       LoadingElementId = "imgloader",
+       OnSuccess = "fnSuccess",
+   },
+            new {@class = "btn btn-primary delete"})
+
+   }
+</div>
+
+
+    

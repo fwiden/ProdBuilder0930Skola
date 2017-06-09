@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.PackageSeries>
+@{
+    ViewBag.Title = "AddPart";
+}
+
+<br/>
+<br/>
+<br/>
+<h2>AddPart</h2>
+
+<div class="row">
+    <div class="col-md-2">
+        <h4 class="alert-success">Choose Series:</h4>
+        @foreach (var item in Model)
+        {
+            <p>
+                @Ajax.ActionLink(item.PackageSeriesName, "AddPartMiddle", "Admin", new {id=item.PackageSeriesId} ,new AjaxOptions
+           {
+               UpdateTargetId = "middle",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET",
+               //LoadingElementId = "imgloader",
+
+
+           }, new { @class = "btn btn-success delete" })
+
+               
+            </p>
+        }
+    </div>
+    <div class="col-md-2" id="middle"></div>
+    <div class="col-md-2" id="middle_right"></div>
+    <div class="col-md-6" id="right"></div>
+    
+
+</div>

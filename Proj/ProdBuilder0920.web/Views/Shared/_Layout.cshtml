@@ -1,0 +1,70 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    @Styles.Render("~/bundles/css")
+    @Scripts.Render("/bundles/modernizr")
+   
+</head>
+<body>
+    <div class="mycolor navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("FW Cars", "Index", "Home", new { area = "" }, new { @class = "navbar-brand logo" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav linkcolor">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Build Product", "Index", "BuildProduct")</li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+                
+            </div>
+        </div>
+    </div>
+
+<div class="container body-content">
+    @RenderBody()
+    <hr/>
+</div>
+<div class="container">
+    <div class="row">
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <footer>
+            <p>
+                &copy; @DateTime.Now.Year - My Product Generator Application
+                |
+                @if (User.IsInRole("admins") && User.Identity.IsAuthenticated)
+                {
+                    @Html.ActionLink("AdminArea", "Index", "Admin")
+
+                }
+                else
+                {
+                    @Html.ActionLink("Admin", "AdminLogin", "Admin")
+                }
+
+            </p>
+        </footer>
+    </div>
+</div>
+
+    @Scripts.Render("~/bundles/js")
+
+</body>
+</html>

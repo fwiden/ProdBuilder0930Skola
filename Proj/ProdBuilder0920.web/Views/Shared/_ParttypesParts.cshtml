@@ -1,0 +1,53 @@
+﻿@using System.Text.RegularExpressions
+@using ProdBuilder0920.Domain
+@model List<PartType>
+
+
+<div class="row">
+
+    <table class="table table-bordered table-striped text-center">
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <b>@item.PartTypeName</b>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            foreach (var item2 in item.Parts)
+            {
+                <tr>
+                    <td></td>
+                    <td>Manufacturer:  @item2.PartManufacturer</td>
+                    <td>Model: @item2.PartModelName</td>
+                    <td>Description:@item2.PartDescription</td>
+                    <td>Delivery: @Html.DisplayFor(modelitem => item2.PartDeliverytime)</td>
+                    <td>Price: @item2.PartPrice</td>
+                    <td>
+                        @Ajax.ActionLink("Add Choice", "Choice","BuildProduct",  new {id=item2.PartID},
+
+                 new AjaxOptions
+                 {
+                     UpdateTargetId = "Choosen", // <-- DOM element ID to update
+                     InsertionMode = InsertionMode.InsertAfter, // <-- Replace the content of DOM element
+                     HttpMethod = "GET", // <-- HTTP method
+
+                 }
+                    , new { @class = "btn btn-primary delete" }
+                 )
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+
+
+</div>

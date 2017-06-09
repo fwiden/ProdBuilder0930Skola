@@ -1,0 +1,55 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi @User.Identity.GetUserName() <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li>@Html.ActionLink("My Account", "Manage", "Account")</li>
+                <li>@Html.ActionLink("My Cart", "ViewCart", "BuildProduct")</li>
+                <li role="separator" class="divider"></li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+            </ul>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi Guest!<span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Log In", "Login", "Account")</li>
+            <li>@Html.ActionLink("Register", "Register", "Account")</li>
+          
+            <li role="separator" class="divider"></li>
+            <li>@Html.ActionLink("Log in as Admin", "AdminLogin", "Admin")</li>
+        </ul>
+    </ul>
+}
+
+
+
+
+
+
+@*{
+     <ul class="nav navbar-nav navbar-right">
+         <li> @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Manage", "Account") </li>
+         <li>@Html.ActionLink("Log off", "LogOff", "Account")</li>
+
+     </ul>
+ }
+ else
+ {
+     <ul class="nav navbar-nav navbar-right">
+          <li>@Html.ActionLink("Register", "Register", "Account")</li> <li>@Html.ActionLink("Log in", "Login", "Account")</li>
+     </ul>
+ }*@
+

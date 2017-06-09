@@ -1,0 +1,26 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.Order>
+@{
+    ViewBag.Title = "MyOrders";
+}
+<br/>
+<br/>
+<br/>
+
+<h2 class="alert-info">MyOrders</h2>
+<table class="table table-responsive table-striped table-hover table-condensed col-md-12">
+    <tr><th></th><th>OrderProdNr</th><th>OrderPlaced</th><th>Deliverydate</th><th>Orderstatus</th><th>Price</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.OrderID</td> <td>@item.OrderNr</td><td>@item.OrderPlaced</td><td>@item.OrderDeliveryDate</td><td>@item.OrderStatus.Value</td><td>@item.OrderlSum kr</td>
+        </tr>
+
+    }
+
+</table>
+
+    
+
+
+
+

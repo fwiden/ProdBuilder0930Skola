@@ -1,0 +1,19 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.PartType>
+    
+
+<h4 class="alert-info">Choose Parttype:</h4>
+@foreach (var item in Model)
+{
+    <p>
+        @Ajax.ActionLink(item.PartTypeName, "ShowRight", "Admin",new { id = item.PartTypeID },new AjaxOptions
+           {
+               UpdateTargetId = "right",
+               InsertionMode = InsertionMode.Replace,
+               HttpMethod = "GET",
+               //LoadingElementId = "imgloader",
+
+           }, new { @class = "btn btn-warning delete" })
+    </p>
+}
+
+

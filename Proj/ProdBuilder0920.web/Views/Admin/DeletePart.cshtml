@@ -1,0 +1,38 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.Part>
+
+@{
+    ViewBag.Title = "DeletePart";
+}
+
+<br/>
+<br/>
+<br/>
+<h2>DeletePart</h2>
+
+
+<h2 class="alert-warning">All Parts in DB</h2>
+<table class="col-md-12 table table-striped table-bordered table-hover">
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+        <th>Manufacturer</th>
+        <th>Deliverytime</th>
+        <th>Model</th>
+        <th>ProductionCode</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.PartID</td>
+            <td>@item.PartDescription</td>
+            <td>@item.PartManufacturer</td>
+            <td>@item.PartDeliverytime</td>
+            <td>@item.PartModelName</td>
+            <td>@item.PartProductionCode</td>
+            <td>@Html.ActionLink("Delete Part", "DeletePartIn", "Admin", new {id=item.PartID}, new { @class = "btn btn-danger delete" })</td>
+        </tr>
+    }
+</table>

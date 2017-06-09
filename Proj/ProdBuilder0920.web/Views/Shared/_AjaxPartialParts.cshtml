@@ -1,0 +1,29 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.Part>
+
+
+
+<br /><br />
+<br /><br />
+<br /><br />
+<div class="row text-center">
+    <i>parts:</i>
+    <br/>
+    <br/>
+    <br/>
+    <table class="table table-striped">
+        <tr>
+            <th>Description</th><th>Manufacturer</th><th>ModelName</th><th>Price</th><th>DeliveryDate</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr class="text-left">
+                <td>@item.PartDescription </td> <td>@item.PartManufacturer </td> <td>@item.PartModelName </td> <td>@item.PartPrice</td><td>@item.PartDeliverytime</td>
+
+            </tr>
+        }
+
+
+    </table>
+     
+   
+</div>

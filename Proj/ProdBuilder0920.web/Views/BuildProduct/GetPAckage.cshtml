@@ -1,0 +1,12 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.PackageSeries> 
+
+@{
+    ViewBag.Title = "GetPAckage";
+}
+
+<h2>GetPAckage</h2>
+
+@foreach (var item in Model)
+{
+    <p>@item.PackageSeriesName</p>  
+}

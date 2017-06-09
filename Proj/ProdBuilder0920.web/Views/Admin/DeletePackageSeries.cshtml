@@ -1,0 +1,33 @@
+﻿@model List<ProdBuilder0920.Domain.PackageSeries>
+@{
+    ViewBag.Title = "DeletePackageSeries";
+}
+
+<br/>
+<br/>
+<br/>
+
+<h2>DeletePackageSeries</h2>
+
+<h2 class="alert-warning">All Series in DB</h2>
+<table class="col-md-12 table table-striped table-bordered table-hover" style="width: 400px;">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.PackageSeriesId</td>
+            <td>@item.PackageSeriesName</td>
+          
+            <td>@Html.ActionLink("Delete Series", "DeleteSeriesIn", "Admin", new { id = item.PackageSeriesId }, new { @class = "btn btn-danger delete" })</td>
+        </tr>
+    }
+</table>
+
+

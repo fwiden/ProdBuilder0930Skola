@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.PackageSeries>
+
+@{
+    ViewBag.Title = "UpdatePackageSeries";
+}
+<br/>
+<br/>
+<br/>
+<h2>UpdatePackageSeries</h2>
+<h2 class="alert-info">All Series in DB</h2>
+
+<table class="col-md-12 table table-striped table-bordered table-hover styleadmin" >
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.PackageSeriesId</td>
+            <td>@item.PackageSeriesName</td>
+           
+            <td>@Html.ActionLink("Update Series", "UpdatePackageSeriesIn", "Admin", new { id = item.PackageSeriesId }, new { @class = "btn btn-primary delete" })</td>
+        </tr>
+    }
+</table>

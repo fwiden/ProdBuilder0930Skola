@@ -1,0 +1,40 @@
+﻿@model IEnumerable<ProdBuilder0920.Domain.Package>
+
+
+<div class="row text-center">
+    
+  </div>
+<br/>
+<br/>
+<br/>
+@foreach (var item in Model)
+{
+    if (@item.PackageImageUrl.Length != null)
+    {
+        <div class="col-md-5 col-md-offset-4 text-center">
+            <div class="hovereffect">
+
+                <img class="img-responsive" src="@Url.Content(item.PackageImageUrl)" alt="image">
+                <div class="overlay">
+                    <h2>@item.PackageName (from @item.PackageStartPrice SEK)</h2>
+
+                </div>
+            </div>
+            @item.PackageDescription
+            <br/>
+            @Html.ActionLink("Customize and buy", "Customize", "BuildProduct", new {id = @item.PackageID}, new {@class = "btn btn-primary delete"})
+
+        </div>
+    }
+    else
+    {
+        @item.PackageDescription
+        <br />
+        @Html.ActionLink("Customize and buy", "Customize", "BuildProduct", new { id = @item.PackageID }, new { @class = "btn btn-primary delete" })
+
+    }
+}
+
+
+
+

@@ -1,0 +1,54 @@
+﻿@using ProdBuilder0920.Domain
+@using ProdBuilder0920.web.Controllers
+@model ProdBuilder0920.Domain.ViewModels.GetPackageViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br /><br /><br />
+<div class="row alert-warning text-center">
+    <h2><strong>Choose Package</strong></h2>
+</div>
+<br /><br />
+
+<div class="row">
+    <div class="col col-md-2"></div>
+    <div class="col-md-8">
+        <table class="table table-responsive table-condensed table-hover">
+
+
+            @foreach (var item in Model.PackageSeries)
+            {
+                <tr>
+                    <td class="col-md-4 text-center alert-info">
+                        SeriesName: <b>@item.PackageSeriesName</b>
+                    </td>
+
+                    <td>
+                        @Ajax.ActionLink("Choose package", "GetPackages", "BuildProduct", new {id = item.PackageSeriesId}, new AjaxOptions
+                        {
+                            UpdateTargetId = "divAll",
+                            InsertionMode = InsertionMode.Replace,
+                            HttpMethod = "GET",
+
+                        },
+                            new {@class = "btn btn-default"})
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="row col-md-2"></div>
+</div>
+<br />
+<div class="row col-md-12" id="divAll"></div>
+<br />
+<br />
+<br />
+<div id="packages"></div>
+<div id="Parttype"></div>
+<div id="Choosen" class="alert-info"></div>    
+
+
+

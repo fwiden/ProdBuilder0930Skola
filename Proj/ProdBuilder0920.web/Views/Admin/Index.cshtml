@@ -1,0 +1,61 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<br /><br /><br />
+<div class="row alert-warning text-center">
+    <h2><strong>Admin Area</strong></h2>
+</div>
+<br />
+<br />
+
+
+<div class="row">
+    @Html.ActionLink("Edit Orders", "SeeAllOrders", "Admin")
+</div>
+<br/>
+<hr class="hr"/>
+<div class="row">
+    @Html.ActionLink("Add a PackageSeries", "AddPackageSeries", "Admin")
+</div>
+
+<div class="row">
+    @Html.ActionLink("Add a Package", "AddPackage", "Admin")
+</div>
+
+<div class="row">
+    @Html.ActionLink("Add a Parttype", "AddParttype", "Admin")
+</div>
+<div class="row">
+    @Html.ActionLink("Add a Part", "AddPart", "Admin")
+</div>
+<br/>
+<hr class="hr"/>
+<div class="row">
+    @Html.ActionLink("Update a PackageSeries", "UpdatePackageSeries", "Admin")
+</div>
+<div class="row">
+    @Html.ActionLink("Update a Package", "UpdatePackage", "Admin")
+</div>
+<div class="row">
+    @Html.ActionLink("Update a Parttype", "UpdatePartType", "Admin")
+</div>
+<div class="row">
+    @Html.ActionLink("Update a Part", "UpdatePart", "Admin")
+</div>
+
+<br/>
+<hr class="hr"/>
+
+@*<div class="row">
+    @Html.ActionLink("Delete a PackageSeries", "DeletePackageSeries", "Admin")
+</div>*@
+<div class="row">
+    @Html.ActionLink("Delete a Package", "DeletePackage", "Admin")
+</div>
+<div class="row">
+    @Html.ActionLink("Delete a Parttype", "DeletePartType", "Admin")
+</div>
+<div class="row">
+    @Html.ActionLink("Delete a Part", "DeletePart", "Admin")
+</div>

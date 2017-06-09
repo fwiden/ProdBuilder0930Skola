@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2F077CB-AA64-4294-988F-61BE1E09F14F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProdBuilder0920.DataService</RootNamespace>
+    <AssemblyName>ProdBuilder0920.DataService</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppContext.cs" />
+    <Compile Include="Migrations\201609201701178_Init.cs" />
+    <Compile Include="Migrations\201609201701178_Init.Designer.cs">
+      <DependentUpon>201609201701178_Init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609201841576_seed.cs" />
+    <Compile Include="Migrations\201609201841576_seed.Designer.cs">
+      <DependentUpon>201609201841576_seed.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609201906217_seedadmin.cs" />
+    <Compile Include="Migrations\201609201906217_seedadmin.Designer.cs">
+      <DependentUpon>201609201906217_seedadmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609210942271_initdataservice.cs" />
+    <Compile Include="Migrations\201609210942271_initdataservice.Designer.cs">
+      <DependentUpon>201609210942271_initdataservice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609211002040_userpropusername.cs" />
+    <Compile Include="Migrations\201609211002040_userpropusername.Designer.cs">
+      <DependentUpon>201609211002040_userpropusername.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609211004544_partname.cs" />
+    <Compile Include="Migrations\201609211004544_partname.Designer.cs">
+      <DependentUpon>201609211004544_partname.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609211204512_updatedentities.cs" />
+    <Compile Include="Migrations\201609211204512_updatedentities.Designer.cs">
+      <DependentUpon>201609211204512_updatedentities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609221101262_reqfiledsedited.cs" />
+    <Compile Include="Migrations\201609221101262_reqfiledsedited.Designer.cs">
+      <DependentUpon>201609221101262_reqfiledsedited.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609221432528_partsupdated.cs" />
+    <Compile Include="Migrations\201609221432528_partsupdated.Designer.cs">
+      <DependentUpon>201609221432528_partsupdated.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609221521200_partyperemovepackageid.cs" />
+    <Compile Include="Migrations\201609221521200_partyperemovepackageid.Designer.cs">
+      <DependentUpon>201609221521200_partyperemovepackageid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609221532411_parttypepropsaltered.cs" />
+    <Compile Include="Migrations\201609221532411_parttypepropsaltered.Designer.cs">
+      <DependentUpon>201609221532411_parttypepropsaltered.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609271107561_removedpriceinpackageproperty.cs" />
+    <Compile Include="Migrations\201609271107561_removedpriceinpackageproperty.Designer.cs">
+      <DependentUpon>201609271107561_removedpriceinpackageproperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609271707195_datecorr.cs" />
+    <Compile Include="Migrations\201609271707195_datecorr.Designer.cs">
+      <DependentUpon>201609271707195_datecorr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201609281139017_updatedparttype.cs" />
+    <Compile Include="Migrations\201609281139017_updatedparttype.Designer.cs">
+      <DependentUpon>201609281139017_updatedparttype.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610021911403_packetseriesid.cs" />
+    <Compile Include="Migrations\201610021911403_packetseriesid.Designer.cs">
+      <DependentUpon>201610021911403_packetseriesid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610021919152_packetseriesid2.cs" />
+    <Compile Include="Migrations\201610021919152_packetseriesid2.Designer.cs">
+      <DependentUpon>201610021919152_packetseriesid2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031645226_idpropertypackageseries.cs" />
+    <Compile Include="Migrations\201610031645226_idpropertypackageseries.Designer.cs">
+      <DependentUpon>201610031645226_idpropertypackageseries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031656345_idpropertypackageseries2.cs" />
+    <Compile Include="Migrations\201610031656345_idpropertypackageseries2.Designer.cs">
+      <DependentUpon>201610031656345_idpropertypackageseries2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031719516_idpropertypackageseries3.cs" />
+    <Compile Include="Migrations\201610031719516_idpropertypackageseries3.Designer.cs">
+      <DependentUpon>201610031719516_idpropertypackageseries3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031752595_idpropertypackageseries4.cs" />
+    <Compile Include="Migrations\201610031752595_idpropertypackageseries4.Designer.cs">
+      <DependentUpon>201610031752595_idpropertypackageseries4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031821063_idpropertypackageseries5.cs" />
+    <Compile Include="Migrations\201610031821063_idpropertypackageseries5.Designer.cs">
+      <DependentUpon>201610031821063_idpropertypackageseries5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031830250_idpropertypackageseries6.cs" />
+    <Compile Include="Migrations\201610031830250_idpropertypackageseries6.Designer.cs">
+      <DependentUpon>201610031830250_idpropertypackageseries6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610031906106_reqtagsadded.cs" />
+    <Compile Include="Migrations\201610031906106_reqtagsadded.Designer.cs">
+      <DependentUpon>201610031906106_reqtagsadded.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610122020006_orderstatus.cs" />
+    <Compile Include="Migrations\201610122020006_orderstatus.Designer.cs">
+      <DependentUpon>201610122020006_orderstatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610130819211_removedorderprop.cs" />
+    <Compile Include="Migrations\201610130819211_removedorderprop.Designer.cs">
+      <DependentUpon>201610130819211_removedorderprop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610151439489_updatedorderprop.cs" />
+    <Compile Include="Migrations\201610151439489_updatedorderprop.Designer.cs">
+      <DependentUpon>201610151439489_updatedorderprop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610151446292_orderplaced.cs" />
+    <Compile Include="Migrations\201610151446292_orderplaced.Designer.cs">
+      <DependentUpon>201610151446292_orderplaced.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610161346572_update1.cs" />
+    <Compile Include="Migrations\201610161346572_update1.Designer.cs">
+      <DependentUpon>201610161346572_update1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201610311046304_urlimagerequired.cs" />
+    <Compile Include="Migrations\201610311046304_urlimagerequired.Designer.cs">
+      <DependentUpon>201610311046304_urlimagerequired.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141425362_seriesid.cs" />
+    <Compile Include="Migrations\201611141425362_seriesid.Designer.cs">
+      <DependentUpon>201611141425362_seriesid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141450325_seriesid2.cs" />
+    <Compile Include="Migrations\201611141450325_seriesid2.Designer.cs">
+      <DependentUpon>201611141450325_seriesid2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141506587_seriesid22.cs" />
+    <Compile Include="Migrations\201611141506587_seriesid22.Designer.cs">
+      <DependentUpon>201611141506587_seriesid22.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141518432_seriesid223.cs" />
+    <Compile Include="Migrations\201611141518432_seriesid223.Designer.cs">
+      <DependentUpon>201611141518432_seriesid223.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141524419_seriesid4.cs" />
+    <Compile Include="Migrations\201611141524419_seriesid4.Designer.cs">
+      <DependentUpon>201611141524419_seriesid4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141533447_seriesid42.cs" />
+    <Compile Include="Migrations\201611141533447_seriesid42.Designer.cs">
+      <DependentUpon>201611141533447_seriesid42.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705311233136_test.cs" />
+    <Compile Include="Migrations\201705311233136_test.Designer.cs">
+      <DependentUpon>201705311233136_test.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProdBuilder0920.Domain\ProdBuilder0920.Domain.csproj">
+      <Project>{2b2e57bf-6271-4a1d-97a7-0fe9ff6a1d73}</Project>
+      <Name>ProdBuilder0920.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609201701178_Init.resx">
+      <DependentUpon>201609201701178_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609201841576_seed.resx">
+      <DependentUpon>201609201841576_seed.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609201906217_seedadmin.resx">
+      <DependentUpon>201609201906217_seedadmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609210942271_initdataservice.resx">
+      <DependentUpon>201609210942271_initdataservice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609211002040_userpropusername.resx">
+      <DependentUpon>201609211002040_userpropusername.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609211004544_partname.resx">
+      <DependentUpon>201609211004544_partname.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609211204512_updatedentities.resx">
+      <DependentUpon>201609211204512_updatedentities.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609221101262_reqfiledsedited.resx">
+      <DependentUpon>201609221101262_reqfiledsedited.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609221432528_partsupdated.resx">
+      <DependentUpon>201609221432528_partsupdated.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609221521200_partyperemovepackageid.resx">
+      <DependentUpon>201609221521200_partyperemovepackageid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609221532411_parttypepropsaltered.resx">
+      <DependentUpon>201609221532411_parttypepropsaltered.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609271107561_removedpriceinpackageproperty.resx">
+      <DependentUpon>201609271107561_removedpriceinpackageproperty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609271707195_datecorr.resx">
+      <DependentUpon>201609271707195_datecorr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609281139017_updatedparttype.resx">
+      <DependentUpon>201609281139017_updatedparttype.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610021911403_packetseriesid.resx">
+      <DependentUpon>201610021911403_packetseriesid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610021919152_packetseriesid2.resx">
+      <DependentUpon>201610021919152_packetseriesid2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031645226_idpropertypackageseries.resx">
+      <DependentUpon>201610031645226_idpropertypackageseries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031656345_idpropertypackageseries2.resx">
+      <DependentUpon>201610031656345_idpropertypackageseries2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031719516_idpropertypackageseries3.resx">
+      <DependentUpon>201610031719516_idpropertypackageseries3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031752595_idpropertypackageseries4.resx">
+      <DependentUpon>201610031752595_idpropertypackageseries4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031821063_idpropertypackageseries5.resx">
+      <DependentUpon>201610031821063_idpropertypackageseries5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031830250_idpropertypackageseries6.resx">
+      <DependentUpon>201610031830250_idpropertypackageseries6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610031906106_reqtagsadded.resx">
+      <DependentUpon>201610031906106_reqtagsadded.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610122020006_orderstatus.resx">
+      <DependentUpon>201610122020006_orderstatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610130819211_removedorderprop.resx">
+      <DependentUpon>201610130819211_removedorderprop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610151439489_updatedorderprop.resx">
+      <DependentUpon>201610151439489_updatedorderprop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610151446292_orderplaced.resx">
+      <DependentUpon>201610151446292_orderplaced.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610161346572_update1.resx">
+      <DependentUpon>201610161346572_update1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201610311046304_urlimagerequired.resx">
+      <DependentUpon>201610311046304_urlimagerequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141425362_seriesid.resx">
+      <DependentUpon>201611141425362_seriesid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141450325_seriesid2.resx">
+      <DependentUpon>201611141450325_seriesid2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141506587_seriesid22.resx">
+      <DependentUpon>201611141506587_seriesid22.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141518432_seriesid223.resx">
+      <DependentUpon>201611141518432_seriesid223.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141524419_seriesid4.resx">
+      <DependentUpon>201611141524419_seriesid4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141533447_seriesid42.resx">
+      <DependentUpon>201611141533447_seriesid42.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705311233136_test.resx">
+      <DependentUpon>201705311233136_test.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

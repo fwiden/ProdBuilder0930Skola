@@ -1,0 +1,35 @@
+﻿@model List<ProdBuilder0920.Domain.Package>
+@{
+    ViewBag.Title = "UpdatePackage";
+}
+<br/>
+<br/>
+<br/>
+
+<h2>Update A Package</h2>
+<h2 class="alert-info">All Packages in DB</h2>
+
+<table class="col-md-12 table table-striped table-bordered table-hover ">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Start Price</th>
+        <th>ProductionCode</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>@item.PackageSeriesId</td>
+            <td>@item.PackageName</td>
+            <td>@item.PackageDescription</td>
+            <td>@item.PackageStartPrice</td>
+            <td>@item.PackageProductionCode</td>
+
+            <td>@Html.ActionLink("Update Package", "UpdatePackageIn", "Admin", new { id = item.PackageID }, new { @class = "btn btn-primary delete" })</td>
+        </tr>
+    }
+</table>

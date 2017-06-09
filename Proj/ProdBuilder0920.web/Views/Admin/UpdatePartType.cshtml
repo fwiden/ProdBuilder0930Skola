@@ -1,0 +1,36 @@
+﻿@model List<ProdBuilder0920.Domain.PartType>
+@{
+    ViewBag.Title = "UpdatePartType";
+}
+
+<br/>
+<br/>
+<br/>
+
+<h2>UpdatePartType</h2>
+<h2 class="alert-info">All Parttypes in DB</h2>
+
+
+<table class="col-md-12 table table-striped table-bordered table-hover " style="width: 555px">
+    <tr>
+        <th>PartType ID</th>
+        <th>Package ID</th>
+        <th>Name</th>
+        @*<th>Package Name</th>*@
+       
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.PartTypeID</td>
+            <td>@item.PackageId</td>
+            <td>@item.PartTypeName</td>
+           
+            @*<td>@item.Package.PackageName</td>*@
+
+            <td>@Html.ActionLink("Update Parttype", "UpdatePartTypeIn", "Admin", new { id = item.PartTypeID }, new { @class = "btn btn-primary delete" })</td>
+        </tr>
+    }
+</table>

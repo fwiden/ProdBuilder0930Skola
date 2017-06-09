@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Manage";
+}
+<br/>
+<br/>
+<br/>
+
+
+
+@if (!User.IsInRole("admins"))
+{
+
+   
+    <dt class="well-sm alert-info text-center">Welcome @User.Identity.Name!</dt>
+    <br/>
+    <br/>
+    <dd>
+        @Html.ActionLink("See My Orders", "MyOrders", "Account")
+    </dd>
+    <dd>
+        @Html.ActionLink("Build Car", "Index", "BuildProduct")
+    </dd>
+}
+else
+{
+
+    <dt class="well-sm alert-info text-center"> Welcome Admin!</dt>
+    <br/><br/>
+
+    <dd>
+        @Html.ActionLink("To the Admin Area", "Index", "Admin")
+    </dd>
+    <dd>
+        @Html.ActionLink("See My Orders", "MyOrders", "Account")
+    </dd>
+}
